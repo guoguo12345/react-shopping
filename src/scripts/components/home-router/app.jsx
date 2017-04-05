@@ -9,28 +9,39 @@ export default React.createClass({
 					{this.props.children}
 				</div>
 				<div className='footer'>
-					<Link to='/home'>
-						<i className="iconfont">&#xe62d;</i>
+					<Link to='/home' className="active">
+						<i className="iconfont icon-shouye"></i>
 						<b>首页</b>
 					</Link>
 					<Link to='/buy'>
-						<i className="iconfont">&#xe608;</i>
+						<i className="iconfont icon-shouye-maimaimai"></i>
 						<b>买买买</b>
 					</Link>
 					<Link to='/news'>
-						<i className="iconfont">&#xe611;</i>
+						<i className="iconfont icon-dongtai"></i>
 						<b>动态</b>
 					</Link>
 					<Link to='/shoppingcar'>
-						<i className="iconfont">&#xe837;</i>
+						<i className="iconfont icon-gouwuche"></i>
 						<b>购物车</b>
 					</Link>
 					<Link to='/my'>
-						<i className="iconfont">&#xe609;</i>
+						<i className="iconfont icon-wode"></i>
 						<b>我的</b>
 					</Link>
 				</div>
 			</div>
 		)
+	},
+	componentDidMount() {
+		var _link = document.querySelector(".app .footer").children;
+		for(var i=0;i<_link.length;i++) {
+			_link[i].onclick = function() {		
+				for(var j=0;j<_link.length;j++) {
+					_link[j].className="";
+				}
+				this.className = 'active';
+			}
+		}
 	}
 });

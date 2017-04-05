@@ -4,7 +4,8 @@ import {Link} from 'react-router';
 import Lunbo from './lunbo.js';
 import Sort from './sort.js';
 import HotPeople from './hotpeople.js';
-import Square from './square.js'
+import Square from './square.js';
+import Search from './search.js';
 export default React.createClass({
 	getInitialState() {
 		return {
@@ -29,11 +30,7 @@ export default React.createClass({
 // 			首页			
 			<div className='home'>
 {/* 			搜索			*/}	
-				<div className="search">
-					<i className="iconfont">&#xe686;</i>
-					<input type='text' placeholder="百搭斜挎包" />
-					<i className="iconfont">&#xe631;</i>
-				</div>
+				<Search />
 {/* 			轮播			*/}		
 				<Lunbo />	
 {/*				分类 			*/}	
